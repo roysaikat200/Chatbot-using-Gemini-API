@@ -8,6 +8,9 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if GEMINI_API_KEY is None:
+    raise ValueError("API key not found. Please set the GEMINI_API_KEY environment variable.")
+
 
 class Gemini:
     def __init__(self):
